@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Burned&family=Single+Day&family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+  </head>
+  <style>
+    body {
+      font-family: <%= newfont %>;
+      color: <%= newcolor %>;
+    }
+  </style>
+  <body>
+    <form action="/generate" method="post">
+      <select name="font" id="font">
+        <% font.forEach(font => { %>
+        <option value="<%= font %>"><%= font %></option>
+        <% }); %> <% color.forEach(color => { %>
+        <label for="color" style="font-family: 'Times New Roman', Times, serif"
+          ><%= color %></label
+        >
+        <input
+          type="radio"
+          name="color"
+          value="<%= color %>"
+          id="<%= color %>"
+          class="selectedColor"
+        />
+        <% }); %>
+      </select>
+      <div class="cont"><%= cont %></div>
+      <br />
+
+      <button type="submit">Generate</button>
+    </form>
+    <script>
+      function selectColor(color) {
+        document.getElementsByClassName("selectedColor").value = color;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+body {
+  font-family: "Arial", sans-serif;
+  color: #000000;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+select,
+input,
+button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button.color-button {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px 5px 0;
+  border: 1px solid #ddd;
+}
